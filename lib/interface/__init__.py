@@ -4,3 +4,5 @@ def titulo(txt):
     print('-'*len(txt))
 
 
+def linha():
+    print()
