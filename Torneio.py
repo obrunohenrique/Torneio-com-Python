@@ -31,3 +31,5 @@ for i, k in enumerate(times):
     for j in torneio[times[i]]:
         print(j)
         
+# Sorteando os confrontos
+
