@@ -5,10 +5,14 @@ torneio = dict()
 times = list()
 
 # Determinando a quantidade de equipes
+while True:
+    num_de_equipes = (input('Quantas equipes participarão do torneio?').strip())
+    if num_de_equipes.isnumeric():
+        num_de_equipes = int(num_de_equipes)
+        break
+    else:
+        lib.interface.titulo('ERRO! por favor, digite a quantidade de equipes pelo teclado numérico.')
 
-num_de_equipes = (input('Quantas equipes participarão do torneio?').strip())
-if num_de_equipes.isnumeric():
-    num_de_equipes = int(num_de_equipes)
 lib.interface.titulo(f'O Torneio Terá {num_de_equipes} Equipes!')
 
 # Determinando os nomes das equipes
@@ -26,10 +30,16 @@ for c in range(1, num_de_equipes+1):
 # Mostrando Times cadastrados na tela
 
 for i, k in enumerate(times):
-    lib.interface.linha()
+    print()
     lib.interface.titulo(k)
     for j in torneio[times[i]]:
         print(j)
         
 # Sorteando os confrontos
 
+lib.cadastro_e_chaveamento.sorteio(times)
+lib.interface.titulo('Jogos Sorteados!')
+
+# Mostrando os confrontos
+
+print(lib.cadastro_e_chaveamento.mostrar_sorteio(times))

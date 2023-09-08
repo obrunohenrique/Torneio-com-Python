@@ -1,3 +1,5 @@
+import lib.interface
+
 def cadastro_de_atletas():
     try:
         atletas = []
@@ -9,3 +11,26 @@ def cadastro_de_atletas():
                 return atletas 
     except Exception as Erro:
         print(f'O erro foi no cadastro de atletas - {Erro}')
+
+
+def sorteio(times):
+    from random import shuffle
+    shuffle(times)
+    return times
+
+
+def mostrar_sorteio(times):
+    jogos = {}
+    cont_de_jogos = 1
+    indice = i = 0
+    indice_reverso = -1
+    while True:
+        if i == len(times) / 2:
+            break
+        else: 
+            lib.interface.linha(f'Jogo {cont_de_jogos}:')
+            print(times[indice], 'X', times [indice_reverso])
+            cont_de_jogos += 1
+            indice += 1
+            indice_reverso -= 1
+            i += 1

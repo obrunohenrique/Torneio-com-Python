@@ -1,8 +1,11 @@
-def titulo(txt):
-    print('-'*len(txt))
-    print(txt)
-    print('-'*len(txt))
+def titulo(txt=''):
+    tam = len(txt) + 4
+    print('-'*tam)
+    print(txt.center(tam))
+    print('-'*tam)
 
 
-def linha():
-    print()
+def linha(txt=''):
+    tam = len(txt) + 4
+    print('-'*tam)
+    print(txt.center(tam))
